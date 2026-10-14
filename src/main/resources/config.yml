@@ -1,0 +1,153 @@
+# BlockParty - configuration
+# After changing anything: /bp reload
+# The setting names are in Spanish; every one is explained in its comment.
+
+# Language of the messages: en (English) or es (Spanish).
+# Texts are in plugins/BlockParty/messages_<language>.yml. Any other code (fr, de...)
+# creates messages_<code>.yml as a copy of the English file, ready to translate.
+language: en
+
+jugadores:            # players
+  # Defaults for every arena.
+  minimo: 2           # minimum players to start
+  maximo: 16          # maximum players per arena
+
+sala-espera:          # lobby
+  # Countdown seconds once the minimum number of players is reached.
+  cuenta-atras: 30
+  # If the arena gets full, the countdown drops to these seconds.
+  cuenta-atras-llena: 10
+
+rondas:               # rounds
+  maximo: 25          # maximum rounds (everyone still standing after the last one wins)
+  # Seconds of music: starts at 'musica-inicial' and goes down little by little to
+  # 'musica-minima', which is reached at round 'rondas-hasta-minimo'.
+  musica-inicial: 10
+  musica-minima: 3
+  # Seconds to get onto the called color (same system as the music).
+  reaccion-inicial: 4
+  reaccion-minima: 1.5
+  rondas-hasta-minimo: 20
+  # Seconds to wait after the blocks are removed (so the players who failed fall).
+  pausa-tras-quitar: 2
+  # A player is eliminated when they drop this many blocks below the floor.
+  bloques-de-caida: 2
+  # Seconds the winner is shown before everyone is sent back.
+  segundos-final: 6
+
+suelo:                # floor
+  # Maximum size (width and length) allowed when saving a floor.
+  tamano-maximo: 64
+  # Blocks changed per tick (20 ticks = 1 second). Lower = smoother for the server,
+  # but the floor takes longer to paint. 1024 paints a 32x32 floor in 1 tick.
+  bloques-por-tick: 1024
+  # Block type of the colors: WOOL, CONCRETE or TERRACOTTA.
+  tipo-bloque: WOOL
+  # Color palette. The key is the Minecraft color (RED, BLUE...),
+  # 'nombre' is the name that is called out and 'color' the on-screen text color.
+  # Optional: 'material' to use a specific block (e.g. material: RED_STAINED_GLASS).
+  colores:
+    RED: { nombre: "RED", color: "#E53935" }
+    ORANGE: { nombre: "ORANGE", color: "#FB8C00" }
+    YELLOW: { nombre: "YELLOW", color: "#FDD835" }
+    LIME: { nombre: "LIME", color: "#8BC34A" }
+    GREEN: { nombre: "GREEN", color: "#2E7D32" }
+    CYAN: { nombre: "CYAN", color: "#00ACC1" }
+    LIGHT_BLUE: { nombre: "LIGHT BLUE", color: "#4FC3F7" }
+    BLUE: { nombre: "BLUE", color: "#3949AB" }
+    PURPLE: { nombre: "PURPLE", color: "#8E24AA" }
+    MAGENTA: { nombre: "MAGENTA", color: "#D81B60" }
+    PINK: { nombre: "PINK", color: "#F48FB1" }
+    WHITE: { nombre: "WHITE", color: "#FFFFFF" }
+    BLACK: { nombre: "BLACK", color: "#616161" }
+  # Floor patterns and how likely each one is (0 = never).
+  patrones:
+    casillas: 45      # random 1x1, 2x2 and 3x3 tiles mixed together
+    franjas: 15       # stripes
+    anillos: 15       # rings
+    ajedrez: 15       # checkerboard
+    diagonales: 10    # diagonals
+
+potenciadores:        # power-ups
+  activado: true      # enabled
+  # Chance (%) that a power-up appears on the floor during the music of each round.
+  probabilidad: 40
+  objeto: NETHER_STAR
+  # How likely each power-up is (0 = disabled).
+  tipos:
+    velocidad: 1       # speed
+    supersalto: 1      # super jump
+    adelanto: 1        # see the next color 1 second earlier
+    ceguera: 1         # short blindness for everyone else
+    bloque-extra: 1    # the block under your feet does not disappear next round
+  segundos-velocidad: 6
+  segundos-supersalto: 6
+  segundos-ceguera: 3
+
+# Leave item: every player in the arena has it in the hotbar (waiting, playing and
+# spectating). Right click with it in hand = /bp leave.
+# Its name and description are in the messages file (objeto-salir-nombre).
+objeto-salir:
+  activado: true      # enabled
+  objeto: BARRIER     # item
+  # Hotbar slot: 0 = first on the left, 8 = last one.
+  hueco: 8
+
+# Commands allowed inside a game (besides /bp).
+# Every other command (/spawn, /home, /tpa, /warp, /is go...) is blocked.
+comandos-permitidos:
+  - msg
+  - tell
+  - w
+  - r
+  - reply
+  - list
+
+recompensas:          # rewards
+  # Money (needs Vault). Without Vault the plugin works the same, just without money.
+  dinero-ganador: 50
+  # true = the winner money is split if there are several winners; false = each one gets the full amount.
+  repartir-entre-ganadores: true
+  dinero-participar: 5
+  # Minimum players at the start for rewards to be given (avoids forced 1-player games).
+  jugadores-minimos: 2
+  # Console commands; {player} is the player's name.
+  comandos-ganador: []
+  comandos-participar: []
+  # Announce the winners to the whole server.
+  anunciar-a-todo-el-servidor: true
+
+# Sounds (Minecraft sound id). Use "" to turn one off.
+sonidos:
+  parar-musica: "block.bell.use"                 # music stops / color is called
+  eliminado: "entity.player.hurt"                # a player is eliminated
+  cuenta-atras: "block.note_block.hat"           # last seconds of the countdown
+  victoria: "ui.toast.challenge_complete"        # end of the game
+  potenciador-aparece: "block.amethyst_block.chime"
+  potenciador-coger: "entity.player.levelup"
+
+musica:               # music
+  volumen: 1.0
+  # Note block melodies. One is picked at random every round.
+  #   sonido: instrument (block.note_block.harp, bell, pling, flute, bit, chime, xylophone, guitar...)
+  #   ticks-por-nota: speed (20 ticks = 1 second; 2-3 fast, 4-5 slow)
+  #   notas: separated by spaces. Numbers 0-24 = note block notes
+  #          (0 = F#, 6 = C, 12 = F# one octave higher, 24 = two octaves);
+  #          '-' = rest; '6+10+13' = several notes at once (chord).
+  melodias:
+    ode-to-joy:
+      sonido: "block.note_block.harp"
+      ticks-por-nota: 4
+      notas: "12 12 13 15 15 13 12 10 8 8 10 12 12 - 10 10 - 12 12 13 15 15 13 12 10 8 8 10 12 10 - 8 8 -"
+    twinkle-twinkle:
+      sonido: "block.note_block.bell"
+      ticks-por-nota: 4
+      notas: "6 6 13 13 15 15 13 - 11 11 10 10 8 8 6 - 13 13 11 11 10 10 8 - 13 13 11 11 10 10 8 -"
+    korobeiniki:
+      sonido: "block.note_block.bit"
+      ticks-por-nota: 3
+      notas: "22 - 17 18 20 - 18 17 15 - 15 18 22 - 20 18 17 - 17 18 20 - 22 - 18 - 15 - 15 - - -"
+    party:
+      sonido: "block.note_block.pling"
+      ticks-por-nota: 2
+      notas: "6+13 10 13 18 13 10 8+15 11 15 20 15 11 10+17 13 17 22 17 13 8+15 11 15 20 15 11"

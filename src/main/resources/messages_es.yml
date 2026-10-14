@@ -1,0 +1,175 @@
+# BlockParty - mensajes en español (se usan con "language: es" en config.yml)
+# Colores con & (&a, &l...) y también hexadecimales: &#FF8800
+# Las palabras entre {llaves} se sustituyen solas.
+
+prefijo: "&8[&dBlock&bParty&8] &7"
+
+# ---------------------------------------------------------------- general
+sin-permiso: "&cNo tienes permiso para hacer eso."
+solo-jugadores: "&cEste comando solo se puede usar dentro del juego."
+uso: "&cUso: &f{uso}"
+recargado: "&aConfiguración, mensajes y arenas recargados."
+recargado-sin-arenas: "&aConfiguración y mensajes recargados. &7(Las arenas no, porque hay partidas en marcha.)"
+error-guardar: "&cNo se pudo guardar tu inventario; por seguridad no puedes entrar. Avisa a un administrador."
+recuperado: "&aTe hemos devuelto el inventario y todo lo que tenías antes de la partida."
+comando-bloqueado: "&cNo puedes usar ese comando durante Block Party. Usa &f/bp leave &cpara salir."
+
+# ---------------------------------------------------------------- entrar y salir
+has-entrado: "&aHas entrado en &f{arena}&a. Sal cuando quieras con &f/bp leave&a."
+ya-en-partida: "&cYa estás en una partida. Sal primero con &f/bp leave&c."
+arena-no-existe: "&cLa arena &f{arena} &cno existe."
+arena-desactivada-jugador: "&cLa arena &f{arena} &cestá desactivada."
+arena-sin-configurar: "&cLa arena &f{arena} &caún no está montada."
+arena-en-partida: "&cEn &f{arena} &cya hay una partida en marcha. Espera a que termine."
+arena-llena-jugador: "&cLa arena &f{arena} &cestá llena."
+no-estas-en-partida: "&cNo estás en ninguna partida."
+has-salido: "&7Has salido de &f{arena}&7."
+objeto-salir-nombre: "&c&lSalir &7(click derecho)"
+objeto-salir-descripcion:
+  - "&7Click derecho con este objeto"
+  - "&7en la mano para salir de la partida."
+entra: "&f{player} &7se ha unido &8({jugadores}/{max})"
+sale: "&f{player} &7ha salido de la partida."
+faltan-jugadores: "&7Faltan &f{faltan} &7jugador(es) para empezar."
+arena-llena: "&a¡Arena llena! La partida empieza en &f{segundos}s&a."
+cuenta-atras-empieza: "&a¡Ya hay jugadores suficientes! Empezamos en &f{segundos}s&a."
+cuenta-atras-cancelada: "&cFaltan jugadores: la cuenta atrás se ha cancelado."
+
+# ---------------------------------------------------------------- partida
+titulo-cuenta-atras: "&e&l{segundos}"
+barra-cuenta-atras: "&aLa partida empieza en &f{segundos}s"
+titulo-empieza: "&d&lBLOCK PARTY"
+subtitulo-empieza: "&7¡Ponte en el color que se anuncie!"
+empieza: "&d¡Empieza Block Party con &f{jugadores} &djugadores! ¡Suerte!"
+barra-musica: "&d♪ &fRonda {ronda} &d♪ &7¡Baila!"
+# {c} es el código de color del color anunciado y {nombre} su nombre; {color} junta los dos.
+titulo-color: "{c}&l¡{nombre}!"
+subtitulo-color: "&7¡Ponte encima del {c}{nombre}&7!"
+barra-color: "{c}&l{nombre}"
+objeto-color: "{c}&l{nombre}"
+subtitulo-adelanto: "&7Próximo color: {c}&l{nombre}"
+ronda-superada: "&7Ronda &f{ronda}&7. Quedan &a{vivos} &7jugadores."
+titulo-eliminado: "&c&l¡ELIMINADO!"
+subtitulo-eliminado: "&7Has llegado a la ronda &f{ronda}"
+eliminado: "&f{player} &cha caído. &7Quedan &a{vivos}&7."
+partida-detenida: "&cLa partida ha sido detenida por un administrador."
+
+# ---------------------------------------------------------------- final
+titulo-ganador: "&6&l¡{ganadores} GANA!"
+titulo-ganadores: "&6&l¡VICTORIA!"
+titulo-sin-ganador: "&7&lSin ganador"
+subtitulo-final: "&7Ronda &f{ronda}"
+final-ganadores-global: "&6&l¡{ganadores} &6ha(n) ganado Block Party en &f{arena} &6(ronda {ronda})!"
+final-sin-ganador: "&7La partida ha terminado sin ganador."
+recompensa-ganador: "&a¡Has ganado &f{dinero}&a!"
+recompensa-participar: "&7Por participar: &f{dinero}"
+sin-recompensas: "&7Partida con menos de {minimo} jugadores: no hay recompensas."
+
+# ---------------------------------------------------------------- potenciadores
+potenciador-nombre: "&b&l✦ POTENCIADOR ✦"
+potenciador-aparece: "&b¡Ha aparecido un potenciador en el suelo!"
+potenciador-velocidad: "&b¡Velocidad! &7Corres más durante unos segundos."
+potenciador-supersalto: "&b¡Supersalto! &7Saltas mucho más durante unos segundos."
+potenciador-adelanto: "&b¡Adelanto! &7Verás el próximo color 1 segundo antes que nadie."
+potenciador-ceguera: "&b¡Ceguera! &7Has dejado ciegos a los demás."
+potenciador-ceguera-recibida: "&f{player} &7te ha dejado ciego con un potenciador."
+potenciador-bloque-extra: "&b¡Bloque extra! &7El bloque bajo tus pies no desaparecerá en la próxima ronda."
+potenciador-bloque-usado: "&b¡Tu bloque extra te ha salvado!"
+
+# ---------------------------------------------------------------- marcador lateral
+marcador:
+  titulo: "&d&lBLOCK &b&lPARTY"
+  esperando:
+    - "&7Arena: &f{arena}"
+    - ""
+    - "&7Jugadores: &a{jugadores}&7/&a{max}"
+    - "&7Mínimo: &f{min}"
+    - ""
+    - "&eEsperando jugadores..."
+  cuenta-atras:
+    - "&7Arena: &f{arena}"
+    - ""
+    - "&7Jugadores: &a{jugadores}&7/&a{max}"
+    - ""
+    - "&aEmpieza en &f{segundos}s"
+  jugando:
+    - "&7Arena: &f{arena}"
+    - ""
+    - "&7Ronda: &f{ronda}&7/&f{rondas}"
+    - "&7Vivos: &a{vivos}"
+    - "&7Tiempo: &f{tiempo}"
+
+# ---------------------------------------------------------------- carteles
+cartel:
+  linea1: "&1&l[BlockParty]"
+  linea2: "&0{arena}"
+  linea3: "{estado}"
+  linea4: "&0{jugadores}/{max}"
+  estado-esperando: "&2Esperando"
+  estado-empezando: "&6Empezando"
+  estado-en-partida: "&4En partida"
+  estado-restaurando: "&8Preparando"
+  estado-desactivada: "&8Desactivada"
+cartel-creado: "&aCartel de la arena &f{arena} &acreado."
+cartel-quitado: "&7Cartel de la arena &f{arena} &7quitado."
+
+# ---------------------------------------------------------------- lista y estadísticas
+lista-vacia: "&7Todavía no hay arenas."
+lista-titulo: "&dArenas de Block Party:"
+lista-linea: "&8 • &f{arena} &8- {estado} &8- &7{jugadores}/{max}"
+stats-sin-datos: "&7{player} todavía no ha jugado a Block Party."
+stats:
+  - "&d&lBlock Party &7- &f{player}"
+  - "&8 • &7Partidas jugadas: &f{jugadas}"
+  - "&8 • &7Victorias: &f{victorias}"
+  - "&8 • &7Mejor ronda: &f{mejor-ronda}"
+
+# ---------------------------------------------------------------- ayuda
+ayuda-jugador:
+  - "&d&lBlock Party"
+  - "&f/bp join <arena> &7- entrar en una arena"
+  - "&f/bp leave &7- salir de la partida"
+  - "&f/bp list &7- ver las arenas"
+  - "&f/bp stats [jugador] &7- estadísticas"
+ayuda-admin:
+  - "&c&lAdministración"
+  - "&f/bp create <arena> &7/ &f/bp delete <arena>"
+  - "&f/bp pos1 &7y &f/bp pos2 &7- marcar las esquinas del suelo (mirando a un bloque)"
+  - "&f/bp setfloor <arena> &7- guardar el suelo (pos1/pos2 o selección de WorldEdit)"
+  - "&f/bp setlobby|setspawn|setspectator|setexit <arena> &7- puntos (donde estás)"
+  - "&f/bp enable|disable <arena> &7- activar o desactivar"
+  - "&f/bp start|stop <arena> &7- forzar inicio o detener"
+  - "&f/bp reload &7- recargar la configuración"
+
+# ---------------------------------------------------------------- administración
+nombre-invalido: "&cNombre no válido: usa letras, números, - o _ (máximo 32)."
+arena-ya-existe: "&cYa existe una arena llamada &f{arena}&c."
+arena-creada: "&aArena &f{arena} &acreada. Ahora marca el suelo con &f/bp pos1&a, &f/bp pos2 &ay &f/bp setfloor {arena}&a."
+arena-borrada: "&7Arena &f{arena} &7borrada."
+arena-incompleta: "&cA la arena &f{arena} &cle falta: &f{faltan}"
+# Cada cosa que puede faltar (se juntan con comas en {faltan}).
+falta:
+  suelo: "suelo (setfloor)"
+  sala-espera: "sala de espera (setlobby)"
+  inicio: "inicio (setspawn)"
+  espectadores: "espectadores (setspectator)"
+  mundo: "el mundo '{mundo}' no está cargado"
+arena-activada: "&aArena &f{arena} &aactivada: ya se puede jugar."
+arena-desactivada: "&7Arena &f{arena} &7desactivada."
+arena-en-uso: "&cLa arena &f{arena} &ctiene jugadores o una partida en marcha. Detenla antes con /bp stop."
+no-se-puede-empezar: "&cNo se puede empezar &f{arena}&c: no hay nadie esperando o ya está en partida."
+forzado-inicio: "&aPartida de &f{arena} &aempezada."
+detenida: "&7Partida de &f{arena} &7detenida."
+mira-un-bloque: "&cMira a un bloque (a menos de 50 bloques)."
+pos1-marcada: "&aEsquina 1 marcada en &f{x}, {y}, {z}&a."
+pos2-marcada: "&aEsquina 2 marcada en &f{x}, {y}, {z}&a."
+sin-seleccion: "&cMarca las dos esquinas con &f/bp pos1 &cy &f/bp pos2 &c(o selecciona con WorldEdit)."
+esquinas-otro-mundo: "&cLas dos esquinas tienen que estar en el mismo mundo."
+esquinas-altura: "&cEl suelo es una sola capa: las dos esquinas tienen que estar a la misma altura (Y)."
+suelo-grande: "&cEl suelo es de {ancho}x{largo}; el máximo es {max}x{max} (suelo.tamano-maximo)."
+suelo-pequeno: "&cEl suelo tiene que ser de al menos 3x3."
+suelo-guardado: "&aSuelo de &f{arena} &aguardado: &f{ancho}x{largo} &a({bloques} bloques, altura {y}). Se ha hecho una copia para restaurarlo siempre."
+punto-guardado-lobby: "&aSala de espera de &f{arena} &aguardada aquí."
+punto-guardado-spawn: "&aPunto de inicio de &f{arena} &aguardado aquí."
+punto-guardado-spectator: "&aPunto de espectadores de &f{arena} &aguardado aquí."
+punto-guardado-exit: "&aPunto de salida de &f{arena} &aguardado aquí."

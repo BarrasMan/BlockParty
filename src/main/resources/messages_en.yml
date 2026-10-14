@@ -1,0 +1,176 @@
+# BlockParty - English messages (used with "language: en" in config.yml)
+# Colors with & (&a, &l...) and also hex colors: &#FF8800
+# Words between {braces} are replaced automatically. Keep the placeholder names
+# exactly as they are (some of them are Spanish words, e.g. {jugadores} = players).
+
+prefijo: "&8[&dBlock&bParty&8] &7"
+
+# ---------------------------------------------------------------- general
+sin-permiso: "&cYou don't have permission to do that."
+solo-jugadores: "&cThis command can only be used in-game."
+uso: "&cUsage: &f{uso}"
+recargado: "&aConfig, messages and arenas reloaded."
+recargado-sin-arenas: "&aConfig and messages reloaded. &7(Arenas were not, because there are games running.)"
+error-guardar: "&cYour inventory could not be saved, so you can't join for safety. Please tell an admin."
+recuperado: "&aYou got back your inventory and everything you had before the game."
+comando-bloqueado: "&cYou can't use that command during Block Party. Use &f/bp leave &cto leave."
+
+# ---------------------------------------------------------------- joining and leaving
+has-entrado: "&aYou joined &f{arena}&a. Leave anytime with &f/bp leave&a."
+ya-en-partida: "&cYou are already in a game. Leave it first with &f/bp leave&c."
+arena-no-existe: "&cArena &f{arena} &cdoes not exist."
+arena-desactivada-jugador: "&cArena &f{arena} &cis disabled."
+arena-sin-configurar: "&cArena &f{arena} &cis not set up yet."
+arena-en-partida: "&cThere is already a game running in &f{arena}&c. Wait until it ends."
+arena-llena-jugador: "&cArena &f{arena} &cis full."
+no-estas-en-partida: "&cYou are not in a game."
+has-salido: "&7You left &f{arena}&7."
+objeto-salir-nombre: "&c&lLeave &7(right click)"
+objeto-salir-descripcion:
+  - "&7Right click with this item"
+  - "&7in your hand to leave the game."
+entra: "&f{player} &7joined &8({jugadores}/{max})"
+sale: "&f{player} &7left the game."
+faltan-jugadores: "&f{faltan} &7more player(s) needed to start."
+arena-llena: "&aArena full! The game starts in &f{segundos}s&a."
+cuenta-atras-empieza: "&aEnough players! Starting in &f{segundos}s&a."
+cuenta-atras-cancelada: "&cNot enough players: the countdown was cancelled."
+
+# ---------------------------------------------------------------- game
+titulo-cuenta-atras: "&e&l{segundos}"
+barra-cuenta-atras: "&aThe game starts in &f{segundos}s"
+titulo-empieza: "&d&lBLOCK PARTY"
+subtitulo-empieza: "&7Stand on the color that is called!"
+empieza: "&dBlock Party starts with &f{jugadores} &dplayers! Good luck!"
+barra-musica: "&d♪ &fRound {ronda} &d♪ &7Dance!"
+# {c} is the color code of the called color and {nombre} its name; {color} joins both.
+titulo-color: "{c}&l{nombre}!"
+subtitulo-color: "&7Stand on {c}{nombre}&7!"
+barra-color: "{c}&l{nombre}"
+objeto-color: "{c}&l{nombre}"
+subtitulo-adelanto: "&7Next color: {c}&l{nombre}"
+ronda-superada: "&7Round &f{ronda}&7. &a{vivos} &7players left."
+titulo-eliminado: "&c&lELIMINATED!"
+subtitulo-eliminado: "&7You reached round &f{ronda}"
+eliminado: "&f{player} &cfell. &a{vivos} &7left."
+partida-detenida: "&cThe game was stopped by an admin."
+
+# ---------------------------------------------------------------- end
+titulo-ganador: "&6&l{ganadores} WINS!"
+titulo-ganadores: "&6&lVICTORY!"
+titulo-sin-ganador: "&7&lNo winner"
+subtitulo-final: "&7Round &f{ronda}"
+final-ganadores-global: "&6&l{ganadores} &6won Block Party in &f{arena} &6(round {ronda})!"
+final-sin-ganador: "&7The game ended with no winner."
+recompensa-ganador: "&aYou won &f{dinero}&a!"
+recompensa-participar: "&7For playing: &f{dinero}"
+sin-recompensas: "&7Game with fewer than {minimo} players: no rewards."
+
+# ---------------------------------------------------------------- power-ups
+potenciador-nombre: "&b&l✦ POWER-UP ✦"
+potenciador-aparece: "&bA power-up appeared on the floor!"
+potenciador-velocidad: "&bSpeed! &7You run faster for a few seconds."
+potenciador-supersalto: "&bSuper jump! &7You jump much higher for a few seconds."
+potenciador-adelanto: "&bHead start! &7You will see the next color 1 second before everyone else."
+potenciador-ceguera: "&bBlindness! &7You blinded everyone else."
+potenciador-ceguera-recibida: "&f{player} &7blinded you with a power-up."
+potenciador-bloque-extra: "&bExtra block! &7The block under your feet won't disappear next round."
+potenciador-bloque-usado: "&bYour extra block saved you!"
+
+# ---------------------------------------------------------------- sidebar scoreboard
+marcador:
+  titulo: "&d&lBLOCK &b&lPARTY"
+  esperando:
+    - "&7Arena: &f{arena}"
+    - ""
+    - "&7Players: &a{jugadores}&7/&a{max}"
+    - "&7Minimum: &f{min}"
+    - ""
+    - "&eWaiting for players..."
+  cuenta-atras:
+    - "&7Arena: &f{arena}"
+    - ""
+    - "&7Players: &a{jugadores}&7/&a{max}"
+    - ""
+    - "&aStarting in &f{segundos}s"
+  jugando:
+    - "&7Arena: &f{arena}"
+    - ""
+    - "&7Round: &f{ronda}&7/&f{rondas}"
+    - "&7Alive: &a{vivos}"
+    - "&7Time: &f{tiempo}"
+
+# ---------------------------------------------------------------- signs
+cartel:
+  linea1: "&1&l[BlockParty]"
+  linea2: "&0{arena}"
+  linea3: "{estado}"
+  linea4: "&0{jugadores}/{max}"
+  estado-esperando: "&2Waiting"
+  estado-empezando: "&6Starting"
+  estado-en-partida: "&4In game"
+  estado-restaurando: "&8Preparing"
+  estado-desactivada: "&8Disabled"
+cartel-creado: "&aSign for arena &f{arena} &acreated."
+cartel-quitado: "&7Sign for arena &f{arena} &7removed."
+
+# ---------------------------------------------------------------- list and stats
+lista-vacia: "&7There are no arenas yet."
+lista-titulo: "&dBlock Party arenas:"
+lista-linea: "&8 • &f{arena} &8- {estado} &8- &7{jugadores}/{max}"
+stats-sin-datos: "&7{player} has not played Block Party yet."
+stats:
+  - "&d&lBlock Party &7- &f{player}"
+  - "&8 • &7Games played: &f{jugadas}"
+  - "&8 • &7Wins: &f{victorias}"
+  - "&8 • &7Best round: &f{mejor-ronda}"
+
+# ---------------------------------------------------------------- help
+ayuda-jugador:
+  - "&d&lBlock Party"
+  - "&f/bp join <arena> &7- join an arena"
+  - "&f/bp leave &7- leave the game"
+  - "&f/bp list &7- list the arenas"
+  - "&f/bp stats [player] &7- statistics"
+ayuda-admin:
+  - "&c&lAdmin"
+  - "&f/bp create <arena> &7/ &f/bp delete <arena>"
+  - "&f/bp pos1 &7and &f/bp pos2 &7- mark the floor corners (looking at a block)"
+  - "&f/bp setfloor <arena> &7- save the floor (pos1/pos2 or WorldEdit selection)"
+  - "&f/bp setlobby|setspawn|setspectator|setexit <arena> &7- points (where you stand)"
+  - "&f/bp enable|disable <arena> &7- enable or disable"
+  - "&f/bp start|stop <arena> &7- force start or stop"
+  - "&f/bp reload &7- reload the config"
+
+# ---------------------------------------------------------------- administration
+nombre-invalido: "&cInvalid name: use letters, numbers, - or _ (32 max)."
+arena-ya-existe: "&cThere is already an arena called &f{arena}&c."
+arena-creada: "&aArena &f{arena} &acreated. Now mark the floor with &f/bp pos1&a, &f/bp pos2 &aand &f/bp setfloor {arena}&a."
+arena-borrada: "&7Arena &f{arena} &7deleted."
+arena-incompleta: "&cArena &f{arena} &cis missing: &f{faltan}"
+# Each thing that can be missing (joined with commas in {faltan}).
+falta:
+  suelo: "floor (setfloor)"
+  sala-espera: "lobby (setlobby)"
+  inicio: "start point (setspawn)"
+  espectadores: "spectator point (setspectator)"
+  mundo: "world '{mundo}' is not loaded"
+arena-activada: "&aArena &f{arena} &aenabled: ready to play."
+arena-desactivada: "&7Arena &f{arena} &7disabled."
+arena-en-uso: "&cArena &f{arena} &chas players or a game running. Stop it first with /bp stop."
+no-se-puede-empezar: "&cCan't start &f{arena}&c: nobody is waiting or a game is already running."
+forzado-inicio: "&aGame in &f{arena} &astarted."
+detenida: "&7Game in &f{arena} &7stopped."
+mira-un-bloque: "&cLook at a block (within 50 blocks)."
+pos1-marcada: "&aCorner 1 set at &f{x}, {y}, {z}&a."
+pos2-marcada: "&aCorner 2 set at &f{x}, {y}, {z}&a."
+sin-seleccion: "&cMark both corners with &f/bp pos1 &cand &f/bp pos2 &c(or select with WorldEdit)."
+esquinas-otro-mundo: "&cBoth corners must be in the same world."
+esquinas-altura: "&cThe floor is a single layer: both corners must be at the same height (Y)."
+suelo-grande: "&cThe floor is {ancho}x{largo}; the maximum is {max}x{max} (suelo.tamano-maximo)."
+suelo-pequeno: "&cThe floor must be at least 3x3."
+suelo-guardado: "&aFloor of &f{arena} &asaved: &f{ancho}x{largo} &a({bloques} blocks, height {y}). A backup was made so it can always be restored."
+punto-guardado-lobby: "&aLobby of &f{arena} &aset here."
+punto-guardado-spawn: "&aStart point of &f{arena} &aset here."
+punto-guardado-spectator: "&aSpectator point of &f{arena} &aset here."
+punto-guardado-exit: "&aExit point of &f{arena} &aset here."

@@ -1,0 +1,24 @@
+name: BlockParty
+version: "1.0.0"
+main: dev.blockparty.BlockParty
+api-version: "26.1"
+description: Block Party minigame for Paper
+softdepend: [Vault, WorldEdit, Multiverse-Core]
+commands:
+  blockparty:
+    description: Block Party minigame
+    usage: /bp help
+    aliases: [bp]
+permissions:
+  blockparty.play:
+    description: Play (join, leave, list, stats)
+    default: true
+  blockparty.admin:
+    description: Create and manage arenas, place signs
+    default: op
+  blockparty.moderar:
+    description: Force start and stop games (/bp start, /bp stop) without being able to set up arenas
+    default: false
+  blockparty.bypass.comandos:
+    description: Use any command while inside a game
+    default: false
